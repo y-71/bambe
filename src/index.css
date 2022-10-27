@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: 'Mattone';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F3F6F9;
+  overflow-x: hidden;
+  color: #001a00
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@font-face {
+  font-family: 'Mattone';
+  src: url(../public/shared-assets/fonts/helvetica-now-w05-text-regular.woff2);
+}
+
+
+.background-text{
+  position: absolute; 
+  text-align: center; 
+  font-size: 30px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+
+.layout{
+  display: flex;
+}
+
+.logo{
+
+  background-color: rgb(77, 255, 0);
+  /* overflow: hidden; */
+}
+
+img{
+  width:70px;
+  
+}
+model-viewer{
+  height: 100vh;
+  width: 100vw
+}
+@media (orientation: landscape) {
+  .layout {
+    flex-direction: row;
+  }
+  .logo{
+    writing-mode:vertical-rl;
+    overflow: visible;
+  }
+  img{
+    transform: rotate(90deg);
+    margin-top:50px; 
+    margin-bottom:50px
+  }
+}
+
+
+@media (orientation: portrait) {
+  .layout {
+    flex-direction: column;
+  }
+  .logo{
+    writing-mode:horizontal-tb;
+  }
+  img{
+    transform: rotate(0deg);
+    margin-left:50px; 
+    margin-right:50px
+  }
+  model-viewer{
+    height: calc(100vh - 48px)
+  }
+}
+
+
