@@ -7,11 +7,11 @@ export default function ModelViewer(){
     const modelViewerRef = useRef(null);
 
     let cameraOrbit = `${angle}deg ${angle}deg`
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        if (autoRotate) setTimeout(()=>{setAngle((angle+0.0071)%360)},1);
-        else{console.log(modelViewerRef.current.turntableRotation)}
-    },[angle, autoRotate]);
+    //     if (autoRotate) setTimeout(()=>{setAngle((angle+0.0071)%360)},1);
+    //     else{console.log(modelViewerRef.current.turntableRotation)}
+    // },[angle, autoRotate]);
     return(
         <div 
             onMouseDown={()=>{setAutorotate(false)}}
@@ -26,11 +26,11 @@ export default function ModelViewer(){
                 
                 className='model-viewer'
                 alt="Mirco" 
-                src="shared-assets/models/002.glb" 
+                src="shared-assets/models/suzanne.glb" 
                  ar 
                 exposure='2'
                 autoRotate='true'
-                camera-orbit={cameraOrbit}
+                // camera-orbit={cameraOrbit}
                 environment-image="shared-assets/environments/snow_field_2k.hdr" 
                 shadow-intensity="1" 
                 camera-controls 
